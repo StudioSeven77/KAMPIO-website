@@ -41,5 +41,17 @@
     <footer id="kontakt" class="footer">
         <p>© 2024 KAMPIO. Wszystkie prawa zastrzeżone.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-visible');
+            });
+        });
+
+    </script>
 </body>
 </html>
