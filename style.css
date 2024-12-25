@@ -1,0 +1,538 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #222;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    color: #ffffff;
+    position: fixed;
+    top: 1%;
+    left: 25%;
+    width: 50%;
+    z-index: 1000;
+    box-shadow: none;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 20px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    margin: 0, auto;
+}
+
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button {
+    flex: 1;
+    /* Przycisk kontakt zajmuje miejsce po prawej stronie */
+    text-align: right;
+}
+
+.contact-button a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    background-color: #f90;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button a:hover {
+    background-color: #fff;
+    color: #f90;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f7931e;
+    flex: 1;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .section2 {
+        display: none;
+        background-color: #000;
+    }
+
+    .section3 {
+        background-color: #000;
+    }
+
+    .navbar {
+        left: 20%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -120%;
+        width: 90%;
+        list-style: none;
+        padding: 50px 20px;
+        transition: opacity 0.5s ease-out;
+        opacity: 0;
+        background-color: rgba(100, 100, 100, 0.2);
+    }
+
+
+    .nav-links.mobile-visible {
+        display: block;
+        opacity: 1;
+    }
+
+
+
+    .nav-links.mobile-visible {
+        top: 101%;
+        right: 4%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        backdrop-filter: blur(30px);
+        box-shadow: 0px 0px 20px rgba(227, 228, 237, 0.37);
+        border: 2px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .nav-links li {
+        margin-bottom: 20%;
+        padding: 3%;
+        padding-top: 4%;
+    }
+
+    .nav-links li :first-child {
+        padding-top: 8%;
+    }
+
+    .nav-links a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        color: #f7931e;
+    }
+
+    .contact-button {
+        display: none;
+    }
+
+    .rozdzial1 img {
+        display: none;
+    }
+
+    .rozdzial1 p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .section3 h1 {
+        font-size: 20px;
+    }
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f7931e;
+}
+
+
+.hero-section {
+    background-image: url('bkg.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    height: 800px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.hero-text p {
+    font-size: 18px;
+}
+
+.content-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #f7931e;
+}
+
+.roboty-opis {
+    float: right;
+}
+
+.roboty-zdj {
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+
+.wynajem-opis {
+    float: left;
+}
+
+.wynajem-zdj {
+    float: right;
+    width: 600px;
+    height: 400px;
+}
+
+.content-section {
+    margin: auto;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    /* Ustala stopkę na lewej krawędzi */
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.hex {
+    display: inline-flex;
+    margin-top: -32px;
+    margin-left: -70px;
+    overflow: hidden;
+}
+
+.hex:nth-child(even) {
+    margin-left: -19px;
+}
+
+.hexagon {
+    position: relative;
+    background-color: #111;
+    height: 110px;
+    width: 100px;
+    margin: 1px;
+    transition: 2s;
+    clip-path: polygon(50% 0%,
+            100% 25%, 100% 75%, 50% 100%,
+            0% 75%, 0% 25%);
+}
+
+.hexagon::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.hexagon:hover {
+    transition: 0s;
+    background: #f7931e;
+}
+
+.section1 {
+    position: relative;
+    /* Ustawia pozycję pierwszej sekcji */
+    z-index: 2;
+    /* Zapewnia, że sekcja1 będzie na wierzchu */
+    padding: 20px;
+}
+
+.section2 {
+    position: relative;
+    /* Ustawia pozycję drugiej sekcji */
+    z-index: 1;
+    /* Ustawia, że sekcja2 będzie pod sekcją1 */
+    padding: 20px;
+    margin-top: -50px;
+    /* To powoduje, że sekcja2 najeżdża na sekcję1 */
+    height: 800px;
+    /* Wysokość sekcji drugiej */
+    padding-bottom: 50px;
+    background-color: #000;
+}
+
+.section3 {
+    margin-top: 840px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 2;
+    pointer-events: none;
+    color: white
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap");
+
+.section4 {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    filter: blur(1px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: self-start;
+}
+
+.swiper-slide-active {
+    filter: blur(0px);
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+.swiper-slide span {
+    text-transform: uppercase;
+    color: #fff;
+    background: #1b7402;
+    padding: 7px 18px 7px 25px;
+    display: inline-block;
+    border-radius: 0 20px 20px 0px;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.swiper-slide--one span {
+    background: #62667f;
+}
+
+.swiper-slide--two span {
+    background: #087ac4;
+}
+
+.swiper-slide--three span {
+    background: #b45205;
+}
+
+.swiper-slide--four span {
+    background: #087ac4;
+}
+
+.swiper-slide h2 {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    padding: 25px 45px 0 25px;
+}
+
+.swiper-slide p {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    padding: 0 25px 35px 25px;
+}
+
+.swiper-slide svg {
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+}
+
+.swiper-slide--one {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+        url("https://www.wynajem-limanowa.pl/wp-content/uploads/2022/06/pixlr-bg-result-8-1024x1024.png") no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--two {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+        url("https://www.wynajem-limanowa.pl/wp-content/uploads/2022/06/pixlr-bg-result-8-1024x1024.png") no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--three {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+        url("https://www.wynajem-limanowa.pl/wp-content/uploads/2022/06/pixlr-bg-result-8-1024x1024.png") no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--four {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+        url("https://www.wynajem-limanowa.pl/wp-content/uploads/2022/06/pixlr-bg-result-8-1024x1024.png") no-repeat 50% 50% / cover;
+}
+
+.swiper-slide--five {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+        url("https://www.wynajem-limanowa.pl/wp-content/uploads/2022/06/pixlr-bg-result-8-1024x1024.png") no-repeat 50% 50% / cover;
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+}
+
+.wypozycz {
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+
+.o-nas-naglowek {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.rozdzial1 {
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+
+
+.rozdzial1 p {
+    float: left;
+}
+
+.rozdzial1 img {
+    float: right;
+}
+
+.rozdzial2 {
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+
+}
+
+
+
+.rozdzial2 p {
+    float: right;
+}
+
+.rozdzial2 img {
+    float: left;
+}
